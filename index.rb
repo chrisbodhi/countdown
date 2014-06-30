@@ -21,8 +21,8 @@ def twitter_post
   client = Twitter::REST::Client.new do |config|
     config.consumer_key        = ENV['CONSUMER_KEY']
     config.consumer_secret     = ENV['CONSUMER_SECRET']
-    config.access_token        = ENV['OAUTH_TOKEN']
-    config.access_token_secret = ENV['OAUTH_SECRET']
+    config.access_token        = ENV['OAUTH_TOKEN']   # Technically no longer the term, but
+    config.access_token_secret = ENV['OAUTH_SECRET']  # they're the names that're stored
   end
 
   client.update(countdown)
