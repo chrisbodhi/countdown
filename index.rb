@@ -1,4 +1,4 @@
-require 'Time'
+require 'HTTP'
 require 'sinatra'
 require 'twitter'
 
@@ -20,4 +20,8 @@ def twitter_post
   end
 
   client.update(countdown)
+end
+
+get '/' do
+  countdown
 end
