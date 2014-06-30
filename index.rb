@@ -1,14 +1,20 @@
-require 'HTTP'
 require 'sinatra'
 require 'twitter'
+
+set :server, 'webrick'
 
 def countdown
   go_time = Time.parse('2014-10-09 18:00:00')
   now = Time.now
-
   time_left_in_seconds = go_time - now
   time_left_in_days = (time_left_in_seconds.to_i)/60/60/24
-  return "#{time_left_in_days} days left to Selection. What are you doing today?\n"
+  if time_left_in_days == 1
+    return "Selection is tomorrow. Make sure your mind is right."
+  elsif time_left_in_days == 0
+    return "It's time."
+  else
+    return "#{time_left_in_days} days left to Selection. What are you doing today?\n"
+  end
 end
 
 def twitter_post
