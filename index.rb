@@ -4,7 +4,7 @@ require 'twitter'
 set :server, 'webrick'
 
 def countdown
-  go_time = Time.parse('2014-10-09 18:00:00')
+  go_time = Time.parse('2015-04-03 18:00:00')
   now = Time.now
   time_left_in_seconds = go_time - now
   time_left_in_days = (time_left_in_seconds.to_i)/60/60/24
